@@ -1,0 +1,22 @@
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\Photo\1.jpg
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\Photo\2.jpg
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe.config
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\FaceMagic_Console.pdb
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\obj\Debug\FaceMagic_Console.csprojResolveAssemblyReference.cache
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\obj\Debug\FaceMagic_Console.exe
+C:\Users\zyf6\AppData\Local\Temporary Projects\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Photo\1.jpg
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Photo\2.jpg
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe.config
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.pdb
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.dll
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.pdb
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.xml
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.csprojResolveAssemblyReference.cache
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.exe
+E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
