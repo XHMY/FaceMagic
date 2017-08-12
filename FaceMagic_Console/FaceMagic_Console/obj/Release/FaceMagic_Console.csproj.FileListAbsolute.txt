@@ -1,0 +1,11 @@
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Photo\1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Photo\2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe.config
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.dll
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.xml
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.csprojResolveAssemblyReference.cache
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.exe
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.pdb

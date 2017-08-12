@@ -30,3 +30,5 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.J
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.csprojResolveAssemblyReference.cache
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\JSON_Value.txt
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.dll

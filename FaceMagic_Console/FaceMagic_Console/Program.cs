@@ -5,7 +5,8 @@ using System.Web;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Timers;
+using System.Text;
+
 
 namespace FaceMagic_Console
 {
@@ -13,7 +14,8 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
-
+            StringBuilder W_FileJSON = new StringBuilder();
+            W_FileJSON.Clear();
             MyValue.Finish = "";
             string[] MyPhotoDicrectory = Directory.GetFiles("Photo") ;
             MyValue.Count = 0;
@@ -27,14 +29,21 @@ namespace FaceMagic_Console
                 //System.Threading.Thread.Sleep(500);
                 while (MyValue.Finish != "OK")
                 {
-                    System.Threading.Thread.Sleep(500);
+                    System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
                 Console.WriteLine("You have upload {0} successful.",MyValue.T_FaceValue.Name_F);
                 Person[MyValue.Count] = MyValue.T_FaceValue;
+                W_FileJSON.Append("{\"Name\":\"");
+                MyValue.T_FaceValue.Name_F.Substring(0, MyValue.T_FaceValue.Name_F.Length - 4);
+                MyValue.T_FaceValue.Name_F.Substring(6);
+                W_FileJSON.Append(MyValue.T_FaceValue.Name_F);
+                W_FileJSON.Append("\"");
+                W_FileJSON.Append(MyValue.T_FileJSON);
+                W_FileJSON.Append("}");
                 MyValue.Count++;
             }
-            Console.WriteLine("----------------SUCCESS----------------");
+            Console.WriteLine("***********----------------SUCCESS----------------***********");
             foreach (Face people in Person)
             {
                 Console.WriteLine("FileName:{0} || Gender:{1} || Age:{2} || FaceID:{3}", 
@@ -43,6 +52,10 @@ namespace FaceMagic_Console
                     people.Age_F,
                     people.ID_F);
             }
+            StreamWriter WriteJSON_TXT = new StreamWriter("JSON_Value.txt");
+            WriteJSON_TXT.Write(W_FileJSON.ToString());
+            
+            WriteJSON_TXT.Close();
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
         }
@@ -73,6 +86,7 @@ namespace FaceMagic_Console
             J_Result = J_Result.Substring(0, J_Result.Length - 1);
             J_Result = J_Result.Substring(1);
             JObject Result_A = JObject.Parse(J_Result);
+            MyValue.T_FileJSON = J_Result.ToString();
             //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test
             MyValue.T_FaceValue = new Face(Result_A["faceId"].ToString(),
                 Result_A["faceAttributes"]["gender"].ToString(),
@@ -89,7 +103,7 @@ namespace FaceMagic_Console
         public static int Count { get; set; }
         public static Face T_FaceValue { get; set; }
         public static string T_Directory { get; set; }
-        
+        public static string T_FileJSON { get; set; }
 
     }
     public class Face

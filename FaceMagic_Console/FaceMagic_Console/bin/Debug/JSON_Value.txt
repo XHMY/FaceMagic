@@ -1,0 +1,1 @@
+{"Name":"Photo\1.jpg"{"faceId":"53990e8a-63b2-4144-85e7-685fbaa7ce48","faceRectangle":{"top":75,"left":234,"width":106,"height":106},"faceAttributes":{"gender":"male","age":45.6}}}{"Name":"Photo\2.jpg"{"faceId":"93a5842b-7cd7-47d7-bdfb-b0cf574b076d","faceRectangle":{"top":40,"left":34,"width":82,"height":82},"faceAttributes":{"gender":"male","age":54.4}}}
