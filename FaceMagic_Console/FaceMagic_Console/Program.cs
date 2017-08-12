@@ -14,10 +14,23 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
+            Get_FaceBasicInformation();
+            EndConsoleOutput();
+        }
+        static void EndConsoleOutput()
+        {
+            Console.WriteLine("\n################--------Designed by ZengYF--------################");
+            Console.WriteLine("\n---------Power by Microsoft---------");
+            Console.WriteLine("\nLearn more about this App in \"github.com/XHMY/FaceMagic\"");
+            Console.WriteLine("\n\nHit ENTER to exit...");
+            Console.ReadLine();
+        }
+        static void Get_FaceBasicInformation()
+        {
             StringBuilder W_FileJSON = new StringBuilder();
             W_FileJSON.Clear();
             MyValue.Finish = "";
-            string[] MyPhotoDicrectory = Directory.GetFiles("Photo") ;
+            string[] MyPhotoDicrectory = Directory.GetFiles("Photo");
             MyValue.Count = 0;
             Face[] Person = new Face[Directory.GetFiles("Photo").Length];
             //Console.WriteLine(Directory.GetFiles("Photo").Length);
@@ -25,14 +38,13 @@ namespace FaceMagic_Console
             foreach (string MPD in MyPhotoDicrectory)
             {
                 MyValue.T_Directory = MPD;
-                UploadFile();
-                //System.Threading.Thread.Sleep(500);
+                API_Detect();
                 while (MyValue.Finish != "OK")
                 {
                     System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
-                Console.WriteLine("You have upload {0} successful.",MyValue.T_FaceValue.Name_F);
+                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Name_F);
                 Person[MyValue.Count] = MyValue.T_FaceValue;
                 W_FileJSON.Append("{\"Name\":\"");
                 MyValue.T_FaceValue.Name_F.Substring(0, MyValue.T_FaceValue.Name_F.Length - 4);
@@ -46,7 +58,7 @@ namespace FaceMagic_Console
             Console.WriteLine("***********----------------SUCCESS----------------***********");
             foreach (Face people in Person)
             {
-                Console.WriteLine("FileName:{0} || Gender:{1} || Age:{2} || FaceID:{3}", 
+                Console.WriteLine("FileName:{0} || Gender:{1} || Age:{2} || FaceID:{3}",
                     people.Name_F,
                     people.Gender_F,
                     people.Age_F,
@@ -54,15 +66,10 @@ namespace FaceMagic_Console
             }
             StreamWriter WriteJSON_TXT = new StreamWriter("JSON_Value.txt");
             WriteJSON_TXT.Write(W_FileJSON.ToString());
-            
             WriteJSON_TXT.Close();
-            Console.WriteLine("Hit ENTER to exit...");
-            Console.ReadLine();
         }
-
-        static async void UploadFile()
+        static async void API_Detect()
         {
-            
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
             // Request headers
@@ -70,7 +77,7 @@ namespace FaceMagic_Console
             // Request parameters
             queryString["returnFaceId"] = "true";
             queryString["returnFaceLandmarks"] = "false";
-            queryString["returnFaceAttributes"] = "gender,age";
+            queryString["returnFaceAttributes"] = "gender,age,smile,glasses";
             var uri = "https://api.cognitive.azure.cn/face/v1.0/detect?" + queryString;
             HttpResponseMessage response;
             using (var content = new ByteArrayContent(File.ReadAllBytes(MyValue.T_Directory)))
@@ -104,7 +111,7 @@ namespace FaceMagic_Console
         public static Face T_FaceValue { get; set; }
         public static string T_Directory { get; set; }
         public static string T_FileJSON { get; set; }
-
+        
     }
     public class Face
     {
