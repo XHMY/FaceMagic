@@ -32,7 +32,7 @@ namespace FaceMagic_Console
             MyValue.Finish = "";
             string[] MyPhotoDicrectory = Directory.GetFiles("Photo");
             MyValue.Count = 0;
-            Face[] Person = new Face[Directory.GetFiles("Photo").Length];
+            MyValue.Person = new Face[Directory.GetFiles("Photo").Length];
             //Console.WriteLine(Directory.GetFiles("Photo").Length);
             //Make sure that we has got the right amount of the picture.
             foreach (string MPD in MyPhotoDicrectory)
@@ -45,7 +45,7 @@ namespace FaceMagic_Console
                 }
                 MyValue.Finish = "";
                 Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Name_F);
-                Person[MyValue.Count] = MyValue.T_FaceValue;
+                MyValue.Person[MyValue.Count] = MyValue.T_FaceValue;
                 W_FileJSON.Append("{\"Name\":\"");
                 MyValue.T_FaceValue.Name_F.Substring(0, MyValue.T_FaceValue.Name_F.Length - 4);
                 MyValue.T_FaceValue.Name_F.Substring(6);
@@ -53,10 +53,11 @@ namespace FaceMagic_Console
                 W_FileJSON.Append("\"");
                 W_FileJSON.Append(MyValue.T_FileJSON);
                 W_FileJSON.Append("}");
+                MyValue.Person[MyValue.Count].Name_P = MyValue.T_FaceValue.Name_F;
                 MyValue.Count++;
             }
             Console.WriteLine("***********----------------SUCCESS----------------***********");
-            foreach (Face people in Person)
+            foreach (Face people in MyValue.Person)
             {
                 Console.WriteLine("FileName:{0} || Gender:{1} || Age:{2} || FaceID:{3}",
                     people.Name_F,
@@ -67,6 +68,7 @@ namespace FaceMagic_Console
             StreamWriter WriteJSON_TXT = new StreamWriter("JSON_Value.txt");
             WriteJSON_TXT.Write(W_FileJSON.ToString());
             WriteJSON_TXT.Close();
+            Console.WriteLine("Warning:The FaceID will expire after 24 hour!!!");
         }
         static async void API_Detect()
         {
@@ -103,6 +105,7 @@ namespace FaceMagic_Console
             //string T_Result = Result_A["faceId"].ToString();
             //Console.WriteLine(T_Result);
         }
+
     }
     public class MyValue
     {
@@ -111,7 +114,7 @@ namespace FaceMagic_Console
         public static Face T_FaceValue { get; set; }
         public static string T_Directory { get; set; }
         public static string T_FileJSON { get; set; }
-        
+        public static Face[] Person { get; set; }
     }
     public class Face
     {
@@ -119,6 +122,8 @@ namespace FaceMagic_Console
         public string ID_F { get; set; }
         public string Gender_F { get; set; }
         public string Age_F { get; set; }
+        public string Name_P { get; set; }
+
         public Face(string id_f, string gender_f, string age_f, string name_f)
         {
             this.ID_F = id_f;
@@ -126,6 +131,11 @@ namespace FaceMagic_Console
             this.Gender_F = gender_f;
             this.Name_F = name_f;
 
-        }  
+        }
+        public Face(string id_f,string name)
+        {
+            this.ID_F = id_f;
+            this.Name_P = name;
+        }
     }
 }
