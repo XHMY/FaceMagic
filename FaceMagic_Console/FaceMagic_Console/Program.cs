@@ -17,6 +17,7 @@ namespace FaceMagic_Console
         {
             List <Face>  Person= new List<Face>();
             Person= Get_FaceBasicInformation();
+            Person = Get_FindSimilar(Person);
             EndConsoleOutput();
         }
         static void EndConsoleOutput()
@@ -26,6 +27,11 @@ namespace FaceMagic_Console
             Console.WriteLine("\nLearn more about this App in \"github.com/XHMY/FaceMagic\"");
             Console.WriteLine("\n\nHit ENTER to exit...");
             Console.ReadLine();
+        }
+        static List<Face> Get_FindSimilar(List<Face> Person)
+        {
+            
+            return Person;
         }
         static List<Face> Get_FaceBasicInformation()
         {
@@ -48,20 +54,16 @@ namespace FaceMagic_Console
                     System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
-                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Name_F);
+                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
                 //MyValue.Person[MyValue.Count] = MyValue.T_FaceValue;                
                 Person.Add(MyValue.T_FaceValue);
-                W_FileJSON.Append("{\"Name\":\"");                
-                W_FileJSON.Append(MyValue.T_FaceValue.Name_F);
-                W_FileJSON.Append("\"");
-                W_FileJSON.Append(MyValue.T_FileJSON);
-                W_FileJSON.Append("}");                
+                W_FileJSON.Append(MyValue.T_FileJSON);            
                 MyValue.Count++;
             }
             Console.WriteLine("***********----------------SUCCESS----------------***********");
             foreach (Face people in Person)
             {
-                Console.WriteLine("FileName:{0} || Gender:{1} || Age:{2} || FaceID:{3}",
+                Console.WriteLine("Name:{0} || Gender:{1} || Age:{2} || FaceID:{3}",
                     people.Name_F,
                     people.Gender_F,
                     people.Age_F,
@@ -100,17 +102,20 @@ namespace FaceMagic_Console
             J_Result = J_Result.Substring(0, J_Result.Length - 1);
             J_Result = J_Result.Substring(1);
             JObject Result_A = JObject.Parse(J_Result);
-            MyValue.T_FileJSON = J_Result.ToString();
-            //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test
             int found1 = 0;
             int found2 = 0;
             found1 = MyValue.T_Directory.IndexOf("\\");
             found2 = MyValue.T_Directory.IndexOf(".");
+            Result_A.Add("Name", MyValue.T_Directory.Substring(found1 + 1, found2 - found1 - 1));
+            Result_A.Add("Path", MyValue.T_Directory);
+            MyValue.T_FileJSON = Result_A.ToString();
+            //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test            
             //MyValue.T_Directory.Substring(1);            
             MyValue.T_FaceValue = new Face(Result_A["faceId"].ToString(),
                 Result_A["faceAttributes"]["gender"].ToString(),
                 Result_A["faceAttributes"]["age"].ToString(),
-                MyValue.T_Directory.Substring(found1+1,found2-found1-1));
+                Result_A["Name"].ToString(),
+                Result_A["Path"].ToString());
             MyValue.Finish = response.StatusCode.ToString();
             //string T_Result = Result_A["faceId"].ToString();
             //Console.WriteLine(T_Result);
@@ -135,14 +140,15 @@ namespace FaceMagic_Console
         public string ID_F { get; set; }
         public string Gender_F { get; set; }
         public string Age_F { get; set; }
+        public string Directory_F {get; set;}
 
-        public Face(string id_f, string gender_f, string age_f, string name_f)
+    public Face(string id_f, string gender_f, string age_f, string name_f ,string directory_f)
         {
             this.ID_F = id_f;
             this.Age_F = age_f;
             this.Gender_F = gender_f;
             this.Name_F = name_f;
-
+            this.Directory_F = directory_f;
         }
     }
 }
