@@ -30,7 +30,19 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Co
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\JSON_Value.txt
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.dll
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\BillG.jpg
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\GBill.jpg
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Sample\Bier.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\API_Key.txt
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Bill Gates1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Bill Gates2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Bill Gates3.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\LarryPage.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Nadella.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Steve Jobs1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Steve Jobs2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\SundarPichai.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Tim Cook1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Tim Cook2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\Turing.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\ZYF1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\ZYF2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\ZYF3.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Sample\YiFanZeng.jpg

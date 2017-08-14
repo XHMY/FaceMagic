@@ -17,6 +17,7 @@ namespace FaceMagic_Console
             List <Face>  Person= new List<Face>();
             StreamReader MyKey = new StreamReader("API_Key.txt");
             MyValue.API_Key = MyKey.ReadToEnd();
+            MyKey.Close();
             Console.WriteLine("Would you want to read file from \"JSON_Value.txt\"?" +
                 "    Hit \"Enter\" to read the file." +
                 "\n(If you Don't know what I said,please Hit \"Space\")");
