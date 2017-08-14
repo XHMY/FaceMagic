@@ -20,8 +20,6 @@ E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json
 E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.csprojResolveAssemblyReference.cache
 E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.exe
 E:\备份\Projects\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Photo\1.jpg
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Photo\2.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe.config
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.pdb
@@ -32,3 +30,6 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Co
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Console.pdb
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\JSON_Value.txt
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\BillG.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\GBill.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Sample\Bier.jpg

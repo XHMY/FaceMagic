@@ -1,5 +1,5 @@
 {
-  "faceId": "f420181a-a52c-4b8e-a821-75a889a8706b",
+  "faceId": "9d17f775-d10d-4f29-bc5c-155e20319f56",
   "faceRectangle": {
     "top": 75,
     "left": 234,
@@ -12,10 +12,11 @@
     "age": 45.6,
     "glasses": "ReadingGlasses"
   },
-  "Name": "1",
-  "Path": "Photo\\1.jpg"
+  "Name": "BillG",
+  "Path": "PhotoGroup\\BillG.jpg",
+  "Sample": "false"
 }{
-  "faceId": "b45034e3-995f-4b82-9d07-fb4c82bff16f",
+  "faceId": "64485fbf-0602-45af-a0d9-fd2b482106c9",
   "faceRectangle": {
     "top": 40,
     "left": 34,
@@ -28,6 +29,24 @@
     "age": 54.4,
     "glasses": "NoGlasses"
   },
-  "Name": "2",
-  "Path": "Photo\\2.jpg"
+  "Name": "GBill",
+  "Path": "PhotoGroup\\GBill.jpg",
+  "Sample": "false"
+}{
+  "faceId": "db3ed60a-6deb-41c3-98b2-2ec5ac2813b0",
+  "faceRectangle": {
+    "top": 205,
+    "left": 415,
+    "width": 425,
+    "height": 425
+  },
+  "faceAttributes": {
+    "smile": 0.016,
+    "gender": "male",
+    "age": 56.2,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Bier",
+  "Path": "Sample\\Bier.jpg",
+  "Sample": "true"
 }
