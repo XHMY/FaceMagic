@@ -1,5 +1,3 @@
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Photo\1.jpg
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Photo\2.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe.config
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.pdb
@@ -9,3 +7,7 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.csprojResolveAssemblyReference.cache
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\JSON_Value.txt
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\BillG.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\GBill.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Sample\Bier.jpg

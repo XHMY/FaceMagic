@@ -65,8 +65,9 @@ namespace FaceMagic_Console
                     SCR.Confidence_F = double.Parse(json["confidence"].ToString());
                 }
             }
+            var _orderedPerson = Person.OrderByDescending(p => p.Confidence_F);
             Console.WriteLine("\nNow, we can show you the similarity of the sample face with each of the group face.");
-            foreach (Face people in Person)
+            foreach (Face people in _orderedPerson)
             {
                 if (people.Sample_F=="false")
                 {

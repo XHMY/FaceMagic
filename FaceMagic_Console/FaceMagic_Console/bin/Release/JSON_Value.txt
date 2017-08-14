@@ -1,0 +1,256 @@
+{
+  "faceId": "d9e6f311-88bd-4cc6-a550-5fea21fc4c16",
+  "faceRectangle": {
+    "top": 75,
+    "left": 234,
+    "width": 106,
+    "height": 106
+  },
+  "faceAttributes": {
+    "smile": 1.0,
+    "gender": "male",
+    "age": 45.6,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Bill Gates1",
+  "Path": "PhotoGroup\\Bill Gates1.jpg",
+  "Sample": "false"
+}{
+  "faceId": "04dd7541-822e-49b8-bba8-09dbe1ca4215",
+  "faceRectangle": {
+    "top": 40,
+    "left": 34,
+    "width": 82,
+    "height": 82
+  },
+  "faceAttributes": {
+    "smile": 0.078,
+    "gender": "male",
+    "age": 54.4,
+    "glasses": "NoGlasses"
+  },
+  "Name": "Bill Gates2",
+  "Path": "PhotoGroup\\Bill Gates2.jpg",
+  "Sample": "false"
+}{
+  "faceId": "8202ae95-4cd2-4e3f-9fde-ef48b72c4772",
+  "faceRectangle": {
+    "top": 205,
+    "left": 415,
+    "width": 425,
+    "height": 425
+  },
+  "faceAttributes": {
+    "smile": 0.016,
+    "gender": "male",
+    "age": 56.2,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Bill Gates3",
+  "Path": "PhotoGroup\\Bill Gates3.jpg",
+  "Sample": "false"
+}{
+  "faceId": "124d9a6b-15bf-404d-b4e8-38c7590d9758",
+  "faceRectangle": {
+    "top": 75,
+    "left": 234,
+    "width": 106,
+    "height": 106
+  },
+  "faceAttributes": {
+    "smile": 1.0,
+    "gender": "male",
+    "age": 45.6,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "BillG",
+  "Path": "PhotoGroup\\BillG.jpg",
+  "Sample": "false"
+}{
+  "faceId": "c3f0aacf-3686-4256-8eb7-8b73ee8ea784",
+  "faceRectangle": {
+    "top": 40,
+    "left": 34,
+    "width": 82,
+    "height": 82
+  },
+  "faceAttributes": {
+    "smile": 0.078,
+    "gender": "male",
+    "age": 54.4,
+    "glasses": "NoGlasses"
+  },
+  "Name": "GBill",
+  "Path": "PhotoGroup\\GBill.jpg",
+  "Sample": "false"
+}{
+  "faceId": "3751b467-7fdf-4a8c-8092-bf4869313efa",
+  "faceRectangle": {
+    "top": 124,
+    "left": 225,
+    "width": 173,
+    "height": 173
+  },
+  "faceAttributes": {
+    "smile": 0.001,
+    "gender": "male",
+    "age": 52.2,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Steve Jobs1",
+  "Path": "PhotoGroup\\Steve Jobs1.jpg",
+  "Sample": "false"
+}{
+  "faceId": "ec66961e-3867-4383-a961-3c912fe9a0bd",
+  "faceRectangle": {
+    "top": 52,
+    "left": 200,
+    "width": 125,
+    "height": 125
+  },
+  "faceAttributes": {
+    "smile": 0.008,
+    "gender": "male",
+    "age": 51.3,
+    "glasses": "NoGlasses"
+  },
+  "Name": "Steve Jobs2",
+  "Path": "PhotoGroup\\Steve Jobs2.jpg",
+  "Sample": "false"
+}{
+  "faceId": "026378c2-39ce-4598-9c4d-31de1a4f6384",
+  "faceRectangle": {
+    "top": 72,
+    "left": 78,
+    "width": 105,
+    "height": 105
+  },
+  "faceAttributes": {
+    "smile": 0.999,
+    "gender": "male",
+    "age": 51.0,
+    "glasses": "NoGlasses"
+  },
+  "Name": "Tim Cook1",
+  "Path": "PhotoGroup\\Tim Cook1.jpg",
+  "Sample": "false"
+}{
+  "faceId": "6113cb03-05b5-47d8-a88b-cd67c1c01dd7",
+  "faceRectangle": {
+    "top": 164,
+    "left": 263,
+    "width": 71,
+    "height": 71
+  },
+  "faceAttributes": {
+    "smile": 0.92,
+    "gender": "male",
+    "age": 64.0,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Tim Cook2",
+  "Path": "PhotoGroup\\Tim Cook2.jpg",
+  "Sample": "false"
+}{
+  "faceId": "ae987146-7024-4e00-a78d-d9a395b2c93d",
+  "faceRectangle": {
+    "top": 460,
+    "left": 211,
+    "width": 332,
+    "height": 332
+  },
+  "faceAttributes": {
+    "smile": 0.04,
+    "gender": "male",
+    "age": 14.8,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "ZYF1",
+  "Path": "PhotoGroup\\ZYF1.jpg",
+  "Sample": "false"
+}{
+  "faceId": "17afab2c-0dc1-47c0-bd02-39bebb037407",
+  "faceRectangle": {
+    "top": 166,
+    "left": 708,
+    "width": 275,
+    "height": 275
+  },
+  "faceAttributes": {
+    "smile": 0.0,
+    "gender": "male",
+    "age": 21.7,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "ZYF2",
+  "Path": "PhotoGroup\\ZYF2.jpg",
+  "Sample": "false"
+}{
+  "faceId": "c5bf280d-49ad-41ba-8641-88395eb41d99",
+  "faceRectangle": {
+    "top": 189,
+    "left": 162,
+    "width": 212,
+    "height": 212
+  },
+  "faceAttributes": {
+    "smile": 0.061,
+    "gender": "male",
+    "age": 18.5,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "ZYF3",
+  "Path": "PhotoGroup\\ZYF3.jpg",
+  "Sample": "false"
+}{
+  "faceId": "b5a483d9-4370-44b4-88f3-0555d9988244",
+  "faceRectangle": {
+    "top": 288,
+    "left": 132,
+    "width": 206,
+    "height": 206
+  },
+  "faceAttributes": {
+    "smile": 0.81,
+    "gender": "male",
+    "age": 17.1,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "ZYF4(2)",
+  "Path": "PhotoGroup\\ZYF4(2).jpg",
+  "Sample": "false"
+}{
+  "faceId": "3df4ebff-7690-4937-b0c2-49a22c8ba8a9",
+  "faceRectangle": {
+    "top": 205,
+    "left": 415,
+    "width": 425,
+    "height": 425
+  },
+  "faceAttributes": {
+    "smile": 0.016,
+    "gender": "male",
+    "age": 56.2,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Bier",
+  "Path": "Sample\\Bier.jpg",
+  "Sample": "true"
+}{
+  "faceId": "94687e81-603c-47d2-a8fe-6042a48ec2f7",
+  "faceRectangle": {
+    "top": 146,
+    "left": 212,
+    "width": 650,
+    "height": 650
+  },
+  "faceAttributes": {
+    "smile": 0.006,
+    "gender": "male",
+    "age": 11.5,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "YiFan Zeng",
+  "Path": "Sample\\YiFan Zeng.jpg",
+  "Sample": "true"
+}
