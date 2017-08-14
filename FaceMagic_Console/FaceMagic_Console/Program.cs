@@ -3,7 +3,6 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Web;
 using System.IO;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text;
 using System.Collections.Generic;
@@ -16,7 +15,35 @@ namespace FaceMagic_Console
         static void Main(string[] args)
         {
             List <Face>  Person= new List<Face>();
-            Person= Get_FaceBasicInformation();            
+            StreamReader MyKey = new StreamReader("API_Key.txt");
+            MyValue.API_Key = MyKey.ReadToEnd();
+            Console.WriteLine("Would you want to read file from \"JSON_Value.txt\"?" +
+                "    Hit \"Enter\" to read the file." +
+                "\n(If you Don't know what I said,please Hit \"Space\")");
+            var Hit = Console.ReadKey();
+            Console.Clear();
+            if (Hit.KeyChar=='\r')
+            {
+                Person = ReadJSONFile("JSON_Value.txt");
+                MyValue.T_Sample = "true";
+                string[] MySampleDicere = Directory.GetFiles("Sample");
+                foreach (var MSD in MySampleDicere)
+                {
+                    MyValue.Finish = "";
+                    API_Detect(MSD);
+                    while (MyValue.Finish != "OK")
+                    {
+                        System.Threading.Thread.Sleep(200);
+                    }
+                    Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
+                    Person.Add(MyValue.T_FaceValue);
+                }
+                
+            }
+            else
+            {
+                Person= Get_FaceBasicInformation();  
+            }          
             Person = Get_Confidence(Person);
             EndConsoleOutput();
         }
@@ -25,11 +52,37 @@ namespace FaceMagic_Console
         {
             Console.WriteLine("\n################--------Designed by ZengYF--------################");
             Console.WriteLine("\n---------Power by Microsoft---------");
-            Console.WriteLine("\nLearn more about this App in \"github.com/XHMY/FaceMagic\"");
+            Console.WriteLine("\nLearn more about this App in \"https://github.com/XHMY/FaceMagic\"");
             Console.WriteLine("\n\nHit ENTER to exit...");
             Console.ReadLine();
         }
 
+        static List<Face> ReadJSONFile(string directory)
+        {
+            List<Face> Person = new List<Face>();
+            StreamReader ReadJSON_TXT = new StreamReader(directory);
+            MyValue.T_FileJSON = ReadJSON_TXT.ReadToEnd();
+            ReadJSON_TXT.Close();
+            MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(0,MyValue.T_FileJSON.Length-1);
+            JObject T_OJSON = new JObject(); 
+            string[] aT_FileJSON = MyValue.T_FileJSON.Split('|');
+            foreach (string json in aT_FileJSON)
+            {
+                T_OJSON = JObject.Parse(json);
+                MyValue.T_FaceValue = new Face(T_OJSON["faceId"].ToString(),
+                T_OJSON["faceAttributes"]["gender"].ToString(),
+                T_OJSON["faceAttributes"]["age"].ToString(),
+                T_OJSON["Name"].ToString(),
+                T_OJSON["Path"].ToString(),
+                T_OJSON["Sample"].ToString());
+                if (MyValue.T_FaceValue.Sample_F=="false")
+                {
+                    Person.Add(MyValue.T_FaceValue);
+                }
+                
+            }
+            return Person;
+        }
         static List<Face> Get_Confidence(List<Face> Person)
         {
             JArray j_FaceIds = new JArray();
@@ -90,9 +143,6 @@ namespace FaceMagic_Console
             string[] MyPhotoDicrectory = Directory.GetFiles("PhotoGroup"); //MyPhotoDicrectory can help API upload all the file in the float photo.
             string[] MySampleDicere = Directory.GetFiles("Sample");
             MyValue.Count = 0;
-            //MyValue.Person = new Face[Directory.GetFiles("Photo").Length];
-            //Console.WriteLine(Directory.GetFiles("Photo").Length);
-            //Make sure that we has got the right amount of the picture.
             MyValue.T_Sample = "false";
             foreach (string MPD in MyPhotoDicrectory)
             {   
@@ -104,7 +154,8 @@ namespace FaceMagic_Console
                 MyValue.Finish = "";
                 Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
                 Person.Add(MyValue.T_FaceValue);
-                W_FileJSON.Append(MyValue.T_FileJSON);            
+                W_FileJSON.Append(MyValue.T_FileJSON);
+                W_FileJSON.Append("|");
                 MyValue.Count++;
             }
             MyValue.T_Sample = "true";
@@ -116,10 +167,10 @@ namespace FaceMagic_Console
                     System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
-                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
-                //MyValue.Person[MyValue.Count] = MyValue.T_FaceValue;                
+                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);            
                 Person.Add(MyValue.T_FaceValue);
                 W_FileJSON.Append(MyValue.T_FileJSON);
+                W_FileJSON.Append("|");
                 MyValue.Count++;
             }
             Console.WriteLine("***********----------------SUCCESS----------------***********");
@@ -143,7 +194,7 @@ namespace FaceMagic_Console
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
             // Request headers
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "eb07e36b635143a4ad8245b8584f7494");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", MyValue.API_Key);
             // Request parameters
             queryString["returnFaceId"] = "true";
             queryString["returnFaceLandmarks"] = "false";
@@ -171,17 +222,14 @@ namespace FaceMagic_Console
             Result_A.Add("Path", T_Directory);
             Result_A.Add("Sample", MyValue.T_Sample);
             MyValue.T_FileJSON = Result_A.ToString();
-            //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test            
-            //MyValue.T_Directory.Substring(1);            
+            //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test                      
             MyValue.T_FaceValue = new Face(Result_A["faceId"].ToString(),
                 Result_A["faceAttributes"]["gender"].ToString(),
                 Result_A["faceAttributes"]["age"].ToString(),
                 Result_A["Name"].ToString(),
                 Result_A["Path"].ToString(),
                 Result_A["Sample"].ToString());
-            MyValue.Finish = response.StatusCode.ToString();
-            //string T_Result = Result_A["faceId"].ToString();
-            //Console.WriteLine(T_Result);            
+            MyValue.Finish = response.StatusCode.ToString();   
         }
 
         static async void API_FindSimilar(string T_FaceId , JArray FaceIds)
@@ -193,14 +241,13 @@ namespace FaceMagic_Console
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
             // Request headers
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "eb07e36b635143a4ad8245b8584f7494");
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", MyValue.API_Key);
 
             var uri = "https://api.cognitive.azure.cn/face/v1.0/findsimilars?" + queryString;
 
             HttpResponseMessage response;
 
             // Request body
-            //Console.WriteLine(Body_J.ToString());
             byte[] byteData = Encoding.UTF8.GetBytes(Body_J.ToString());
 
             using (var content = new ByteArrayContent(byteData))
@@ -208,7 +255,6 @@ namespace FaceMagic_Console
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 response = await client.PostAsync(uri, content);
             }
-            //Console.WriteLine(await response.Content.ReadAsStringAsync());
             MyValue.T_FileJSON = await response.Content.ReadAsStringAsync();
             MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(0, MyValue.T_FileJSON.Length - 1);
             MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(1);
@@ -218,13 +264,13 @@ namespace FaceMagic_Console
     }
     public class MyValue
     {
+        public static string API_Key { get; set; }
         public static string T_Sample { get; set; }
         public static string Finish { get; set; }
         public static int Count { get; set; }
         public static Face T_FaceValue { get; set; }
         public static string T_Directory { get; set; }
         public static string T_FileJSON { get; set; }
-        //public static Face[] Person { get; set; }
         
     }
     public class Face

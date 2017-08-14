@@ -1,5 +1,5 @@
 {
-  "faceId": "aec24b47-9053-4caa-905c-815a669bdb84",
+  "faceId": "5cfb3d34-ca87-4c74-81ce-07cc59e1e90d",
   "faceRectangle": {
     "top": 75,
     "left": 234,
@@ -15,8 +15,8 @@
   "Name": "BillG",
   "Path": "PhotoGroup\\BillG.jpg",
   "Sample": "false"
-}{
-  "faceId": "aec42e60-11d1-424a-9722-85bdca486ecc",
+}|{
+  "faceId": "4b749584-4ef8-49b0-8eeb-39f8d4ee876d",
   "faceRectangle": {
     "top": 40,
     "left": 34,
@@ -32,8 +32,8 @@
   "Name": "GBill",
   "Path": "PhotoGroup\\GBill.jpg",
   "Sample": "false"
-}{
-  "faceId": "ccfa7bcd-6790-4a27-b2a2-28890a28c822",
+}|{
+  "faceId": "3aea8027-922a-4706-9cb4-7d163fb0da25",
   "faceRectangle": {
     "top": 205,
     "left": 415,
@@ -49,4 +49,4 @@
   "Name": "Bier",
   "Path": "Sample\\Bier.jpg",
   "Sample": "true"
-}
+}|

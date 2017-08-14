@@ -1,5 +1,5 @@
 {
-  "faceId": "d9e6f311-88bd-4cc6-a550-5fea21fc4c16",
+  "faceId": "650706c3-3760-48aa-b991-b03357414282",
   "faceRectangle": {
     "top": 75,
     "left": 234,
@@ -16,7 +16,7 @@
   "Path": "PhotoGroup\\Bill Gates1.jpg",
   "Sample": "false"
 }{
-  "faceId": "04dd7541-822e-49b8-bba8-09dbe1ca4215",
+  "faceId": "a9659fb1-b324-4d53-93f5-9bb82c4833cd",
   "faceRectangle": {
     "top": 40,
     "left": 34,
@@ -33,7 +33,7 @@
   "Path": "PhotoGroup\\Bill Gates2.jpg",
   "Sample": "false"
 }{
-  "faceId": "8202ae95-4cd2-4e3f-9fde-ef48b72c4772",
+  "faceId": "ea4ad142-6073-42f8-a5ce-0b06418ad701",
   "faceRectangle": {
     "top": 205,
     "left": 415,
@@ -50,41 +50,7 @@
   "Path": "PhotoGroup\\Bill Gates3.jpg",
   "Sample": "false"
 }{
-  "faceId": "124d9a6b-15bf-404d-b4e8-38c7590d9758",
-  "faceRectangle": {
-    "top": 75,
-    "left": 234,
-    "width": 106,
-    "height": 106
-  },
-  "faceAttributes": {
-    "smile": 1.0,
-    "gender": "male",
-    "age": 45.6,
-    "glasses": "ReadingGlasses"
-  },
-  "Name": "BillG",
-  "Path": "PhotoGroup\\BillG.jpg",
-  "Sample": "false"
-}{
-  "faceId": "c3f0aacf-3686-4256-8eb7-8b73ee8ea784",
-  "faceRectangle": {
-    "top": 40,
-    "left": 34,
-    "width": 82,
-    "height": 82
-  },
-  "faceAttributes": {
-    "smile": 0.078,
-    "gender": "male",
-    "age": 54.4,
-    "glasses": "NoGlasses"
-  },
-  "Name": "GBill",
-  "Path": "PhotoGroup\\GBill.jpg",
-  "Sample": "false"
-}{
-  "faceId": "3751b467-7fdf-4a8c-8092-bf4869313efa",
+  "faceId": "c7486a70-a46b-4f91-979e-d434c7df0795",
   "faceRectangle": {
     "top": 124,
     "left": 225,
@@ -101,7 +67,7 @@
   "Path": "PhotoGroup\\Steve Jobs1.jpg",
   "Sample": "false"
 }{
-  "faceId": "ec66961e-3867-4383-a961-3c912fe9a0bd",
+  "faceId": "89835573-160c-45a5-b114-10a7e4ffd833",
   "faceRectangle": {
     "top": 52,
     "left": 200,
@@ -118,7 +84,7 @@
   "Path": "PhotoGroup\\Steve Jobs2.jpg",
   "Sample": "false"
 }{
-  "faceId": "026378c2-39ce-4598-9c4d-31de1a4f6384",
+  "faceId": "93e52786-9575-4971-bd8c-852f6b15e513",
   "faceRectangle": {
     "top": 72,
     "left": 78,
@@ -135,7 +101,7 @@
   "Path": "PhotoGroup\\Tim Cook1.jpg",
   "Sample": "false"
 }{
-  "faceId": "6113cb03-05b5-47d8-a88b-cd67c1c01dd7",
+  "faceId": "7f4fd1f0-80ef-4ca2-8946-ba1fb839f915",
   "faceRectangle": {
     "top": 164,
     "left": 263,
@@ -152,7 +118,7 @@
   "Path": "PhotoGroup\\Tim Cook2.jpg",
   "Sample": "false"
 }{
-  "faceId": "ae987146-7024-4e00-a78d-d9a395b2c93d",
+  "faceId": "92996b5b-2d19-4c48-ad2c-c363ed4a101c",
   "faceRectangle": {
     "top": 460,
     "left": 211,
@@ -169,7 +135,7 @@
   "Path": "PhotoGroup\\ZYF1.jpg",
   "Sample": "false"
 }{
-  "faceId": "17afab2c-0dc1-47c0-bd02-39bebb037407",
+  "faceId": "839a6207-fd5b-4a7a-999a-0dbf61ae74d8",
   "faceRectangle": {
     "top": 166,
     "left": 708,
@@ -186,7 +152,7 @@
   "Path": "PhotoGroup\\ZYF2.jpg",
   "Sample": "false"
 }{
-  "faceId": "c5bf280d-49ad-41ba-8641-88395eb41d99",
+  "faceId": "cf2f079d-2462-4b0e-850e-07bef3dc6aa6",
   "faceRectangle": {
     "top": 189,
     "left": 162,
@@ -203,7 +169,7 @@
   "Path": "PhotoGroup\\ZYF3.jpg",
   "Sample": "false"
 }{
-  "faceId": "b5a483d9-4370-44b4-88f3-0555d9988244",
+  "faceId": "7eb7ab93-2f8a-4c0c-8f89-86702aeac9f5",
   "faceRectangle": {
     "top": 288,
     "left": 132,
@@ -220,24 +186,7 @@
   "Path": "PhotoGroup\\ZYF4(2).jpg",
   "Sample": "false"
 }{
-  "faceId": "3df4ebff-7690-4937-b0c2-49a22c8ba8a9",
-  "faceRectangle": {
-    "top": 205,
-    "left": 415,
-    "width": 425,
-    "height": 425
-  },
-  "faceAttributes": {
-    "smile": 0.016,
-    "gender": "male",
-    "age": 56.2,
-    "glasses": "ReadingGlasses"
-  },
-  "Name": "Bier",
-  "Path": "Sample\\Bier.jpg",
-  "Sample": "true"
-}{
-  "faceId": "94687e81-603c-47d2-a8fe-6042a48ec2f7",
+  "faceId": "cce377a1-a0f3-43f6-b2f7-91c58bbccb1e",
   "faceRectangle": {
     "top": 146,
     "left": 212,

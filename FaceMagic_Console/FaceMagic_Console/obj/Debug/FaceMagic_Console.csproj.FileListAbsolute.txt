@@ -33,3 +33,4 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Newtonsoft.J
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\BillG.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\PhotoGroup\GBill.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Sample\Bier.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\API_Key.txt
