@@ -1,5 +1,5 @@
 {
-  "faceId": "9d17f775-d10d-4f29-bc5c-155e20319f56",
+  "faceId": "aec24b47-9053-4caa-905c-815a669bdb84",
   "faceRectangle": {
     "top": 75,
     "left": 234,
@@ -16,7 +16,7 @@
   "Path": "PhotoGroup\\BillG.jpg",
   "Sample": "false"
 }{
-  "faceId": "64485fbf-0602-45af-a0d9-fd2b482106c9",
+  "faceId": "aec42e60-11d1-424a-9722-85bdca486ecc",
   "faceRectangle": {
     "top": 40,
     "left": 34,
@@ -33,7 +33,7 @@
   "Path": "PhotoGroup\\GBill.jpg",
   "Sample": "false"
 }{
-  "faceId": "db3ed60a-6deb-41c3-98b2-2ec5ac2813b0",
+  "faceId": "ccfa7bcd-6790-4a27-b2a2-28890a28c822",
   "faceRectangle": {
     "top": 205,
     "left": 415,

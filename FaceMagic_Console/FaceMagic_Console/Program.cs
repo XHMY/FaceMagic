@@ -17,7 +17,7 @@ namespace FaceMagic_Console
         {
             List <Face>  Person= new List<Face>();
             Person= Get_FaceBasicInformation();            
-            Person = Get_FindSimilar(Person);
+            Person = Get_Confidence(Person);
             EndConsoleOutput();
         }
 
@@ -30,7 +30,7 @@ namespace FaceMagic_Console
             Console.ReadLine();
         }
 
-        static List<Face> Get_FindSimilar(List<Face> Person)
+        static List<Face> Get_Confidence(List<Face> Person)
         {
             JArray j_FaceIds = new JArray();
             var sam_Faces = from sam_Person in Person
@@ -41,14 +41,41 @@ namespace FaceMagic_Console
                 if (people.Sample_F=="false")
                 {
                     j_FaceIds.Add(people.ID_F);
-                }
-                
+                }                
             }
-            
+            MyValue.Finish = "";
             foreach (var sam_faceid in sam_Faces)
-            {
-                
+            {                
                 API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), j_FaceIds);
+                while (MyValue.Finish != "OK")
+                {
+                    System.Threading.Thread.Sleep(200);
+                }
+            }
+            string MyJSON_T = MyValue.T_FileJSON.Replace("},{", "}|{");
+            string[] MyJSON = MyJSON_T.Split('|');
+                        
+            foreach (string MJ in MyJSON)
+            {
+                JObject json = new JObject();
+                json = JObject.Parse(MJ);
+                var c_result = Person.Where(p => p.ID_F == json["faceId"].ToString());
+                foreach (Face SCR in c_result)
+                {
+                    SCR.Confidence_F = double.Parse(json["confidence"].ToString());
+                }
+            }
+            Console.WriteLine("\nNow, we can show you the similarity of the sample face with each of the group face.");
+            foreach (Face people in Person)
+            {
+                if (people.Sample_F=="false")
+                {
+                    Console.WriteLine("Name: {0}  Gender: {1}  Age: {2}  Confidence: {3}", people.Name_F,people.Gender_F,people.Age_F, people.Confidence_F);
+                }
+                else
+                {
+                    Console.WriteLine("\nSampleFaceName: {0}  Gender: {1}  Age: {2}", people.Name_F, people.Gender_F, people.Age_F);
+                }
             }
             
             return Person;
@@ -172,7 +199,7 @@ namespace FaceMagic_Console
             HttpResponseMessage response;
 
             // Request body
-            Console.WriteLine(Body_J.ToString());
+            //Console.WriteLine(Body_J.ToString());
             byte[] byteData = Encoding.UTF8.GetBytes(Body_J.ToString());
 
             using (var content = new ByteArrayContent(byteData))
@@ -180,7 +207,12 @@ namespace FaceMagic_Console
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 response = await client.PostAsync(uri, content);
             }
-            Console.WriteLine(await response.Content.ReadAsStringAsync());
+            //Console.WriteLine(await response.Content.ReadAsStringAsync());
+            MyValue.T_FileJSON = await response.Content.ReadAsStringAsync();
+            MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(0, MyValue.T_FileJSON.Length - 1);
+            MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(1);
+            
+            MyValue.Finish = response.StatusCode.ToString();
         }
     }
     public class MyValue
@@ -200,8 +232,9 @@ namespace FaceMagic_Console
         public string ID_F { get; set; }
         public string Gender_F { get; set; }
         public string Age_F { get; set; }
-        public string Directory_F {get; set;}
+        public string Directory_F { get; set;}
         public string Sample_F { get; set; }
+        public double Confidence_F { get; set; }
 
         public Face(string id_f, string gender_f, string age_f, string name_f ,string directory_f, string sample_f)
         {
@@ -211,6 +244,12 @@ namespace FaceMagic_Console
             this.Name_F = name_f;
             this.Directory_F = directory_f;
             this.Sample_F = sample_f;
+        }
+
+        public Face(string id_f, double confidence_f)
+        {
+            this.ID_F = id_f;
+            this.Confidence_F = confidence_f; 
         }
     }
 }
