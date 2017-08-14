@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="FaceMagic_Console.exe" version="1.0.0.0" publicKeyToken="4b27dee41a9a1b23" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="smiling_face_128px_1179719_easyicon.net.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="FaceMagic_Console" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="FaceMagic_Console.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FaceMagic_Console.exe" size="85952">
+      <assemblyIdentity name="FaceMagic_Console" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>m90QEnUK0tgk3ZphX1JzF4fuHHHB2cLuyQWL8pEP3F0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="333312">
+      <assemblyIdentity name="Newtonsoft.Json" version="4.0.3.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>NKu5kEBJpaWVDTXeFupIv1G4J9EsIdO0FjMmoa5Zdq8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="API_Key.txt" size="35">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/mcSthfxSA13Iwbvc6WpxTnbzaK2bj6RdOfQvymmBbs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="FaceMagic_Console.exe.config" size="187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ibSJhBWt6kT1jcg30WbAXCZJOzy699/zUdgGnXs5g9w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="JSON_Value.txt" size="3">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Bill Gates1.jpg" size="17783">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fOL3Xov3zzd4Lum+y/UkYXac79JENpQBxqiGAUROZnc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Bill Gates2.jpg" size="5260">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pHeBL8sS3UB+ogtwD5zCHrnCiyHIs9CWOmnmpgYzDgU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Bill Gates3.jpg" size="139232">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0Q4Hj0m0Xfud/TyptjjX77K/I1OpEyZAuueYAMwJ9DA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\LarryPage.jpg" size="116912">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Xg6slbV6Df71GkvnfpEwgyU+mNbmZ8F86M8tivbMuM4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Nadella.jpg" size="6938">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1MskNTGyZTcvSL11x6M0DG6WysXp4pymBUQeTQihys0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Steve Jobs1.jpg" size="10417">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ufrS0uh13YNIHNhauc6RahT3gdQ/+Bc3HtUFPHY1xVE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Steve Jobs2.jpg" size="14347">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y7740R8C07V/7y/GTXQgwREg1iuOx3wKY7PC2y59t8Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\SundarPichai.jpg" size="81981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yTJ7eNjPkBgvu/EnChKSvFTBv9Hs2aP5FtzJUcq0b9M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Tim Cook1.jpg" size="11337">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OMkcBrFYCjB01jJhmRQci8gvgYiSZTr8tEFSH/HRUZM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Tim Cook2.jpg" size="18770">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FN3wPrjoblFNiuMTkGzGdve/I0Mr1yELDc123kbHEwg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\Turing.jpg" size="10956">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6ArWaFF4MNS0UlIydcdQVM74eTBVrhz3AnQbLQKF+n4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\ZYF1.jpg" size="60815">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fZsLBobYZQACGhVxRoFggRZ+2cV04BVUerZB86c/Vj4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\ZYF2.jpg" size="86589">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jYxPkbmhT7/lCRMPkQ12O5VdXPVGg75y7JYwyrVsT/A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PhotoGroup\ZYF3.jpg" size="48383">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1dUav2CXvMmL6UB6ayk6iLCawi12RJ4aGvdVMjbRaFM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Sample\YiFanZeng.jpg" size="57826">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1FHEHJEKJ5THBS5HMIHeo2Etb5qSdl4G8otxdYt/gIc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="smiling_face_128px_1179719_easyicon.net.ico" size="67134">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Gt6Bk33+ginA2yBJdME/nfFbTB8jpFZKEBvwAdw0SG4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=TAIHULIGHT\zyf6" issuerKeyHash="fcf1dada1ae010418419b0f0e74e4f6618dc1487" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>J1uFuOowydEbC5INXaGtVDV2H8iWvoQTGjj/oAP961I=</DigestValue></Reference></SignedInfo><SignatureValue>t8wXyFwrjzyvHUqLnzPUDe2uGkrhBd1XmhdKxK6uFxKXq8waZTzWClO+nCTYqQx5hNzwAG9bmOtQBCNImbDqzGV3txyyUunhqSh1ws3JDBn1zvITXtDpBP8DqlEIWlq035eNgo9SU35TntuxjyPZm4119vu6jaNWEX7ydGZCqFk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xqUdTsnod37Ufh7CfKQ1ViUBhnShxWQEeaVIe47CaonypNmu8M7yphs6Uv//pxhZrKJiB07+bHnm5AIyddejzjqFO8NZN0OMpOXJHrjTpbX8M2841onmVw3ElGaP45m0qjoz5FoTUR7jsA2MNl6bnh9npHTIsGdqBy8ehVeylQU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="52ebfd03a0ff381a1384be96c81f763554ada15d0d920b1bd1c930eab8855b27" Description="" Url=""><as:assemblyIdentity name="FaceMagic_Console.exe" version="1.0.0.0" publicKeyToken="4b27dee41a9a1b23" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=TAIHULIGHT\zyf6</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>kMpZDCxFqtNHm+ASF1AVc59+tqQW56yWAW6Tr4N1ySA=</DigestValue></Reference></SignedInfo><SignatureValue>uws32q73Nzc3JqyhiiwUnqK7WvbFbRHpbuzCBf10Yf6+4sn/+hfoLjyaf2MHot5LiuL2PJY4AEmBUfnNASRwyeNP4wgoEgcLKGOf5Es1Z0vME9SZe6m2Gl3hZkl7kR09OYvY5ieSIJ5EZSrXa7HFZAa7/eor43fCvw+kvQ2sHDI=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xqUdTsnod37Ufh7CfKQ1ViUBhnShxWQEeaVIe47CaonypNmu8M7yphs6Uv//pxhZrKJiB07+bHnm5AIyddejzjqFO8NZN0OMpOXJHrjTpbX8M2841onmVw3ElGaP45m0qjoz5FoTUR7jsA2MNl6bnh9npHTIsGdqBy8ehVeylQU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQFJf/B8vdZZ1A8WcxwCvQDzANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AVABBAEkASABVAEwASQBHAEgAVABcAHoAeQBmADYwHhcNMTcwODE0MjMzOTM4WhcNMTgwODE1MDUzOTM4WjApMScwJQYDVQQDHh4AVABBAEkASABVAEwASQBHAEgAVABcAHoAeQBmADYwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMalHU7J6Hd+1H4ewnykNVYlAYZ0ocVkBHmlSHuOwmqJ8qTZrvDO8qYbOlL//6cYWayiYgdO/mx55uQCMnXXo846hTvDWTdDjKTlyR6406W1/DNvONaJ5lcNxJRmj+OZtKo6M+RaE1Ee47ANjDZem54fZ6R0yLBnagcvHoVXspUFAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAe3owP9W22tU9wlhQu9j0quMOLdZT8WPFhxVAU3cnEj2OnKV1HyrGHPOHsWceSxWOF+Uly1LCEnuuSP4OJ0BBZ4twH4GM94mf0f3HH9UjQ5rJ1Cr3NCgrTtguriy3RaRvT/Qh7VrNxbyL2mIpoxC8cLoZzmGg3e2E9Xs34od568k=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

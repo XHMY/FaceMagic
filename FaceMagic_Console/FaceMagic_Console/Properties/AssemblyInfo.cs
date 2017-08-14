@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FaceMagic_Console")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A magical App that can help you find specify face in a group.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FaceMagic_Console")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("Dawn Corporation.")]
+[assembly: AssemblyProduct("FaceMagic")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Dawn Corporation. All rights reserved.")]
+[assembly: AssemblyTrademark("Dawn")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
