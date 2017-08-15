@@ -100,7 +100,7 @@ namespace FaceMagic_Console
             MyValue.Finish = "";
             foreach (var sam_faceid in sam_Faces)
             {                
-                API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), j_FaceIds);
+                API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), j_FaceIds, "matchFace");
                 while (MyValue.Finish != "OK")
                 {
                     System.Threading.Thread.Sleep(200);
@@ -233,11 +233,12 @@ namespace FaceMagic_Console
             MyValue.Finish = response.StatusCode.ToString();   
         }
 
-        static async void API_FindSimilar(string T_FaceId , JArray FaceIds)
+        static async void API_FindSimilar(string T_FaceId , JArray FaceIds,string mode)
         {
             JObject Body_J = new JObject();
             Body_J.Add("faceId",T_FaceId);            
             Body_J.Add("faceIds", FaceIds);
+            Body_J.Add("mode",mode);
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 

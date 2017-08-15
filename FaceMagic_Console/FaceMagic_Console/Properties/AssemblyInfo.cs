@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FaceMagic_Console")]
-[assembly: AssemblyDescription("A magical App that can help you find specify face in a group.")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dawn Corporation.")]
-[assembly: AssemblyProduct("FaceMagic")]
-[assembly: AssemblyCopyright("Copyright ©  2017 Dawn Corporation. All rights reserved.")]
-[assembly: AssemblyTrademark("Dawn")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("FaceMagic_Console")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9a1e8fdb-fa00-4a6b-8713-ff7a20c2184d")]
+[assembly: Guid("5ab5975e-fe48-40e8-bb19-1c3798be3f99")]
 
 // Version information for an assembly consists of the following four values:
 //
