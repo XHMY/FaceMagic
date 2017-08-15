@@ -132,7 +132,20 @@ namespace FaceMagic_Console
                     Console.WriteLine("\nSampleFaceName: {0}  Gender: {1}  Age: {2}", people.Name_F, people.Gender_F, people.Age_F);
                 }
             }
-            
+            MyValue.Count = 0;
+            var SamePeople = Person.Where(p=>p.Confidence_F >0.7);
+            foreach (Face sp in SamePeople)
+            {
+                if (sp.Sample_F=="false")
+                {
+                    MyValue.Count++;
+                    File.Copy(Path.GetFullPath(sp.Directory_F), "Result\\" 
+                        +sp.Name_F
+                        +sp.Directory_F.Substring(sp.Directory_F.Length-4),true);
+                }
+            }
+            Console.WriteLine("\nWe have found {0} picture have the same with sample picture." +
+                "\nYou can see it in the float \"Result\"",MyValue.Count);
             return Person;
         }
         static List<Face> Get_FaceBasicInformation()
@@ -284,6 +297,7 @@ namespace FaceMagic_Console
         public string Directory_F { get; set;}
         public string Sample_F { get; set; }
         public double Confidence_F { get; set; }
+        public string Same_F { get; set; }
 
         public Face(string id_f, string gender_f, string age_f, string name_f ,string directory_f, string sample_f)
         {
@@ -299,6 +313,12 @@ namespace FaceMagic_Console
         {
             this.ID_F = id_f;
             this.Confidence_F = confidence_f; 
+        }
+
+        public Face(string id_f, string same_f)
+        {
+            this.ID_F = id_f;
+            this.Same_F = same_f;
         }
     }
 }

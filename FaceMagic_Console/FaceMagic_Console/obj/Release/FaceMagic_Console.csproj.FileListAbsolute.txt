@@ -1,0 +1,27 @@
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\API_Key.txt
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\JSON_Value.txt
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Bill Gates1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Bill Gates2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Bill Gates3.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\LarryPage.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Nadella.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Steve Jobs1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Steve Jobs2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\SundarPichai.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Tim Cook1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Tim Cook2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\Turing.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\ZYF1.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\ZYF2.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\PhotoGroup\ZYF3.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Sample\YiFanZeng.jpg
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe.config
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.exe
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_Console.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.dll
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.xml
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.csprojResolveAssemblyReference.cache
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.exe
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.pdb
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Result\There are the photo we found
