@@ -134,6 +134,11 @@ namespace FaceMagic_Console
             }
             MyValue.Count = 0;
             var SamePeople = Person.Where(p=>p.Confidence_F >0.7);
+            string[] R_Picture = Directory.GetFiles("Result");
+            foreach (string file in R_Picture)
+            {
+                File.Delete(file);
+            }
             foreach (Face sp in SamePeople)
             {
                 if (sp.Sample_F=="false")

@@ -1,5 +1,5 @@
 {
-  "faceId": "9cc72d17-0e37-47ea-b700-f4c1ad677cbd",
+  "faceId": "d7e9ac80-91b7-459b-a5cd-47917deee4ec",
   "faceRectangle": {
     "top": 75,
     "left": 234,
@@ -16,24 +16,7 @@
   "Path": "PhotoGroup\\Bill Gates1.jpg",
   "Sample": "false"
 }|{
-  "faceId": "6f714df2-5870-4e44-9e69-5251409aa66c",
-  "faceRectangle": {
-    "top": 40,
-    "left": 34,
-    "width": 82,
-    "height": 82
-  },
-  "faceAttributes": {
-    "smile": 0.078,
-    "gender": "male",
-    "age": 54.4,
-    "glasses": "NoGlasses"
-  },
-  "Name": "Bill Gates2",
-  "Path": "PhotoGroup\\Bill Gates2.jpg",
-  "Sample": "false"
-}|{
-  "faceId": "8bc34bbe-5cce-4193-92a4-a47447dab2d4",
+  "faceId": "29fe73fb-43ad-4ee1-ab79-2e9d8ae1b2dd",
   "faceRectangle": {
     "top": 205,
     "left": 415,
@@ -50,7 +33,24 @@
   "Path": "PhotoGroup\\Bill Gates3.jpg",
   "Sample": "false"
 }|{
-  "faceId": "4a893802-b92b-46f3-b692-ec598646ba70",
+  "faceId": "79a51955-360e-48b2-86d1-e1e93b0360ae",
+  "faceRectangle": {
+    "top": 168,
+    "left": 40,
+    "width": 370,
+    "height": 370
+  },
+  "faceAttributes": {
+    "smile": 0.08,
+    "gender": "female",
+    "age": 16.1,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Jve L",
+  "Path": "PhotoGroup\\Jve L.jpg",
+  "Sample": "false"
+}|{
+  "faceId": "8283c59a-d265-4a8c-904f-6d89225b3e0c",
   "faceRectangle": {
     "top": 181,
     "left": 427,
@@ -67,7 +67,7 @@
   "Path": "PhotoGroup\\LarryPage.jpg",
   "Sample": "false"
 }|{
-  "faceId": "07713071-2f55-4302-9c8e-d57f126ba0b5",
+  "faceId": "12cb208b-e7f7-45ab-81fc-b7407d8ae0d2",
   "faceRectangle": {
     "top": 42,
     "left": 102,
@@ -84,7 +84,7 @@
   "Path": "PhotoGroup\\Nadella.jpg",
   "Sample": "false"
 }|{
-  "faceId": "0e9c6aa9-55d6-4da8-937d-0230463c7249",
+  "faceId": "09a3101c-2615-452e-b114-30ba760c70f7",
   "faceRectangle": {
     "top": 124,
     "left": 225,
@@ -101,7 +101,7 @@
   "Path": "PhotoGroup\\Steve Jobs1.jpg",
   "Sample": "false"
 }|{
-  "faceId": "e722275b-76c1-4ef5-9526-4289b729971e",
+  "faceId": "09bdf9a4-98ca-4488-b745-9e1eacf8de37",
   "faceRectangle": {
     "top": 52,
     "left": 200,
@@ -118,7 +118,7 @@
   "Path": "PhotoGroup\\Steve Jobs2.jpg",
   "Sample": "false"
 }|{
-  "faceId": "3999afeb-e941-45b4-b065-2cf19ba7157b",
+  "faceId": "7ae89e57-ba6e-4032-8d67-17bdaf411e0f",
   "faceRectangle": {
     "top": 113,
     "left": 200,
@@ -135,7 +135,7 @@
   "Path": "PhotoGroup\\SundarPichai.jpg",
   "Sample": "false"
 }|{
-  "faceId": "39bd3ee6-cb3f-4b3e-856b-a9031a50bae3",
+  "faceId": "95e8f148-0612-4be0-ac81-a695f846e6f2",
   "faceRectangle": {
     "top": 72,
     "left": 78,
@@ -152,24 +152,7 @@
   "Path": "PhotoGroup\\Tim Cook1.jpg",
   "Sample": "false"
 }|{
-  "faceId": "b9b0c397-bdb0-4c2f-bbe7-a66b17c55314",
-  "faceRectangle": {
-    "top": 164,
-    "left": 263,
-    "width": 71,
-    "height": 71
-  },
-  "faceAttributes": {
-    "smile": 0.92,
-    "gender": "male",
-    "age": 64.0,
-    "glasses": "ReadingGlasses"
-  },
-  "Name": "Tim Cook2",
-  "Path": "PhotoGroup\\Tim Cook2.jpg",
-  "Sample": "false"
-}|{
-  "faceId": "bb951a1d-8937-4748-a63c-f491d1b1fd29",
+  "faceId": "33d86f11-2d7e-44a9-ba7e-d43311af7d09",
   "faceRectangle": {
     "top": 75,
     "left": 72,
@@ -186,7 +169,24 @@
   "Path": "PhotoGroup\\Turing.jpg",
   "Sample": "false"
 }|{
-  "faceId": "cee43d65-45f4-4522-b402-b975e2805a92",
+  "faceId": "6cf47166-6312-4abc-962a-5b78da0f4c2d",
+  "faceRectangle": {
+    "top": 199,
+    "left": 55,
+    "width": 369,
+    "height": 369
+  },
+  "faceAttributes": {
+    "smile": 0.041,
+    "gender": "female",
+    "age": 27.5,
+    "glasses": "NoGlasses"
+  },
+  "Name": "ZhiYing W 4",
+  "Path": "PhotoGroup\\ZhiYing W 4.jpg",
+  "Sample": "false"
+}|{
+  "faceId": "f05129f0-c0a7-4c6e-99c7-bf5c1dad428d",
   "faceRectangle": {
     "top": 460,
     "left": 211,
@@ -203,7 +203,7 @@
   "Path": "PhotoGroup\\ZYF1.jpg",
   "Sample": "false"
 }|{
-  "faceId": "a5ef4420-c38d-4628-ab75-30bc4fc5c062",
+  "faceId": "98a7fab8-1295-4f82-b091-9ec2eaa131c8",
   "faceRectangle": {
     "top": 166,
     "left": 708,
@@ -220,7 +220,7 @@
   "Path": "PhotoGroup\\ZYF2.jpg",
   "Sample": "false"
 }|{
-  "faceId": "44374675-3694-4f19-ad76-85c2cfb716fd",
+  "faceId": "2420316e-9b22-46c1-b20c-8d60647922e1",
   "faceRectangle": {
     "top": 189,
     "left": 162,
@@ -237,20 +237,20 @@
   "Path": "PhotoGroup\\ZYF3.jpg",
   "Sample": "false"
 }|{
-  "faceId": "ce1087e5-62eb-429f-be36-c98b99299a83",
+  "faceId": "b14ac405-5ed2-40d9-aa1f-efbebabe87f7",
   "faceRectangle": {
-    "top": 29,
-    "left": 71,
-    "width": 393,
-    "height": 393
+    "top": 164,
+    "left": 207,
+    "width": 433,
+    "height": 433
   },
   "faceAttributes": {
-    "smile": 0.0,
-    "gender": "male",
-    "age": 14.3,
-    "glasses": "ReadingGlasses"
+    "smile": 0.432,
+    "gender": "female",
+    "age": 20.8,
+    "glasses": "NoGlasses"
   },
-  "Name": "YiFanZeng",
-  "Path": "Sample\\YiFanZeng.jpg",
+  "Name": "ZhiYing W (3)",
+  "Path": "Sample\\ZhiYing W (3).jpg",
   "Sample": "true"
 }|
