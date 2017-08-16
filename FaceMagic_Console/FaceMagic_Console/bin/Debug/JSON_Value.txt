@@ -1,5 +1,5 @@
 |{
-  "faceId": "66c46324-052a-45bd-9b60-d3d2e9b0cb48",
+  "faceId": "020dcd91-7916-4c6f-b782-200643ffbbb8",
   "faceRectangle": {
     "top": 281,
     "left": 771,
@@ -16,7 +16,7 @@
   "Path": "PhotoGroup\\A.jpg",
   "Sample": "false"
 }|{
-  "faceId": "fe3dbc19-1607-44c1-83fe-3e706e37d461",
+  "faceId": "32e0ba94-da41-452b-b254-b8232b6df44e",
   "faceRectangle": {
     "top": 312,
     "left": 139,
@@ -33,7 +33,7 @@
   "Path": "PhotoGroup\\A.jpg",
   "Sample": "false"
 }|{
-  "faceId": "b869741a-5d2a-4c57-8806-07d070c53ee3",
+  "faceId": "d97b493f-1ae8-4e91-9b71-04fd60de7936",
   "faceRectangle": {
     "top": 168,
     "left": 40,
@@ -50,7 +50,7 @@
   "Path": "PhotoGroup\\Jve L.jpg",
   "Sample": "false"
 }|{
-  "faceId": "6d6b3f0a-96fd-4e04-9abf-4e4220220edf",
+  "faceId": "25f2d3d6-007f-4c4a-97d7-b1a7d75665d1",
   "faceRectangle": {
     "top": 164,
     "left": 207,
@@ -67,7 +67,7 @@
   "Path": "PhotoGroup\\ZhiYing W (3).jpg",
   "Sample": "false"
 }|{
-  "faceId": "a03ac972-2e2c-4a51-8991-9ac30672ffd5",
+  "faceId": "ce8c51c0-d055-45c4-80ef-6d22dcac59af",
   "faceRectangle": {
     "top": 243,
     "left": 298,
@@ -84,7 +84,7 @@
   "Path": "PhotoGroup\\ZhiYing W (4).jpg",
   "Sample": "false"
 }|{
-  "faceId": "91914774-1b56-4517-928c-175b67cc6967",
+  "faceId": "264fd9eb-e4c0-4e6c-a2aa-6c261f132527",
   "faceRectangle": {
     "top": 223,
     "left": 403,
@@ -101,7 +101,7 @@
   "Path": "PhotoGroup\\ZhiYing W (5).jpg",
   "Sample": "false"
 }|{
-  "faceId": "b5aa6c00-3fae-4659-825a-b4bebc16fe08",
+  "faceId": "c1b376c5-24ef-42c8-b459-6327140f0213",
   "faceRectangle": {
     "top": 178,
     "left": 53,
@@ -118,7 +118,7 @@
   "Path": "PhotoGroup\\ZhiYing W (7).jpg",
   "Sample": "false"
 }|{
-  "faceId": "9da1da33-67b8-46a0-942b-26c43cc2f72a",
+  "faceId": "42f76ce6-e5e2-473c-aa51-4ce8fc636cd6",
   "faceRectangle": {
     "top": 199,
     "left": 55,
@@ -135,7 +135,7 @@
   "Path": "PhotoGroup\\ZhiYing W 4.jpg",
   "Sample": "false"
 }|{
-  "faceId": "f790ff15-3806-4d37-b795-dae0ca5761a6",
+  "faceId": "03def6f6-c8ed-4fa5-b99d-6e27865eecca",
   "faceRectangle": {
     "top": 363,
     "left": 1017,

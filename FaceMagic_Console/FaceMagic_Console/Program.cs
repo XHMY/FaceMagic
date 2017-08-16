@@ -14,6 +14,9 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please input the threshold, If you can't understand, please input 0.7.");
+            Console.WriteLine("(  0<Threshold<1  )");
+            MyValue.Threshold = double.Parse( Console.ReadLine());
             string[] R_Picture = Directory.GetFiles("Error");
             foreach (string file in R_Picture)
             {
@@ -23,7 +26,7 @@ namespace FaceMagic_Console
             StreamReader MyKey = new StreamReader("API_Key.txt");
             MyValue.API_Key = MyKey.ReadToEnd();
             MyKey.Close();
-            Console.WriteLine("Would you want to read file from \"JSON_Value.txt\"?" +
+            Console.WriteLine("\nWould you want to read file from \"JSON_Value.txt\"?" +
                 "    Hit \"Enter\" to read the file." +
                 "\n(If you can't understand or want to upload all file, please Hit \"Space\")");
             var Hit = Console.ReadKey();
@@ -141,7 +144,7 @@ namespace FaceMagic_Console
                 }
             }
             MyValue.Count = 0;
-            var SamePeople = Person.Where(p=>p.Confidence_F >0.63);
+            var SamePeople = Person.Where(p=>p.Confidence_F >MyValue.Threshold);
             string[] R_Picture = Directory.GetFiles("Result");
             foreach (string file in R_Picture)
             {
@@ -153,8 +156,9 @@ namespace FaceMagic_Console
                 {
                     MyValue.Count++;
                     File.Copy(Path.GetFullPath(sp.Directory_F), "Result\\" 
-                        +sp.Name_F
-                        +sp.Directory_F.Substring(sp.Directory_F.Length-4),true);
+                        + sp.Confidence_F
+                        +"  "+ sp.Name_F
+                        + sp.Directory_F.Substring(sp.Directory_F.Length-4),true);
                 }
             }
             Console.WriteLine("\nWe have found {0} picture have the same with sample picture." +
@@ -359,6 +363,7 @@ namespace FaceMagic_Console
         public static bool T_FindFace { get; set; }
         public static Face[] TA_FaceValue { get; set; }
         public static StringBuilder TB_FileJSON { get; set; }
+        public static double Threshold { get; set; }
     }
     public class Face
     {
