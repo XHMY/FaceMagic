@@ -10,3 +10,4 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.pdb
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Result\There are the photo we found
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Error\Error file will copy to this folder

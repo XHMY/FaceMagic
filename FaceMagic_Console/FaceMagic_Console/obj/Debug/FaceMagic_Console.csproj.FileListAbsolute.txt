@@ -1,4 +1,3 @@
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Sample\YiFanZeng.jpg
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe.config
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\FaceMagic_Console.pdb
@@ -11,3 +10,4 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Debug\FaceMagic_Co
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\API_Key.txt
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\JSON_Value.txt
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Result\There are the photo we found
+D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Debug\Error\Error file will copy to this folder

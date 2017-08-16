@@ -14,6 +14,11 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
+            string[] R_Picture = Directory.GetFiles("Error");
+            foreach (string file in R_Picture)
+            {
+                File.Delete(file);
+            }
             List <Face>  Person= new List<Face>();
             StreamReader MyKey = new StreamReader("API_Key.txt");
             MyValue.API_Key = MyKey.ReadToEnd();
@@ -60,10 +65,6 @@ namespace FaceMagic_Console
             Console.WriteLine("\nLearn more about this App in \"https://github.com/XHMY/FaceMagic\"");
             Console.WriteLine("\n\nHit ENTER to exit...");
             Console.ReadLine();
-        }
-        static void SaveResult(StringBuilder W_FileJSON, List<Face> Person)
-        {
-
         }
         static List<Face> ReadJSONFile(string directory)
         {
@@ -140,7 +141,7 @@ namespace FaceMagic_Console
                 }
             }
             MyValue.Count = 0;
-            var SamePeople = Person.Where(p=>p.Confidence_F >0.7);
+            var SamePeople = Person.Where(p=>p.Confidence_F >0.63);
             string[] R_Picture = Directory.GetFiles("Result");
             foreach (string file in R_Picture)
             {
@@ -162,6 +163,7 @@ namespace FaceMagic_Console
         }
         static List<Face> Get_FaceBasicInformation()
         {
+          
             List<Face> Person = new List<Face>();  //Creat a new list called Person
             StringBuilder W_FileJSON = new StringBuilder(); //W_FileJSON is the String be written into the TXT file.
             W_FileJSON.Clear();
@@ -265,6 +267,8 @@ namespace FaceMagic_Console
             if (J_Result == "[]")
             {
                 MyValue.T_FindFace = false;
+                File.Copy(Path.GetFullPath(T_Directory), "Error\\"
+                        + T_Directory.Substring(11),true);
             }
             else
             {
