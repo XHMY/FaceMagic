@@ -66,13 +66,11 @@
     <None Include="Result\There are the photo we found">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Sample\YiFanZeng.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="smiling_face_128px_1179719_easyicon.net.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PhotoGroup\" />
+    <Folder Include="Sample\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
