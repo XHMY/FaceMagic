@@ -20,7 +20,7 @@ namespace FaceMagic_Console
             MyKey.Close();
             Console.WriteLine("Would you want to read file from \"JSON_Value.txt\"?" +
                 "    Hit \"Enter\" to read the file." +
-                "\n(If you Don't know what I said,please Hit \"Space\")");
+                "\n(If you can't understand or want to upload all file, please Hit \"Space\")");
             var Hit = Console.ReadKey();
             Console.Clear();
             if (Hit.KeyChar=='\r')
@@ -36,8 +36,12 @@ namespace FaceMagic_Console
                     {
                         System.Threading.Thread.Sleep(200);
                     }
-                    Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
-                    Person.Add(MyValue.T_FaceValue);
+                    foreach (Face T_FaceValue in MyValue.TA_FaceValue)
+                    {
+                        Console.WriteLine("You have upload {0} successful.", T_FaceValue.Directory_F);
+                        Person.Add(T_FaceValue);
+                    }
+                    
                 }
                 
             }
@@ -57,14 +61,17 @@ namespace FaceMagic_Console
             Console.WriteLine("\n\nHit ENTER to exit...");
             Console.ReadLine();
         }
+        static void SaveResult(StringBuilder W_FileJSON, List<Face> Person)
+        {
 
+        }
         static List<Face> ReadJSONFile(string directory)
         {
             List<Face> Person = new List<Face>();
             StreamReader ReadJSON_TXT = new StreamReader(directory);
             MyValue.T_FileJSON = ReadJSON_TXT.ReadToEnd();
             ReadJSON_TXT.Close();
-            MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(0,MyValue.T_FileJSON.Length-1);
+            MyValue.T_FileJSON = MyValue.T_FileJSON.Substring(1,MyValue.T_FileJSON.Length-1);
             JObject T_OJSON = new JObject(); 
             string[] aT_FileJSON = MyValue.T_FileJSON.Split('|');
             foreach (string json in aT_FileJSON)
@@ -171,11 +178,26 @@ namespace FaceMagic_Console
                     System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
-                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);
-                Person.Add(MyValue.T_FaceValue);
-                W_FileJSON.Append(MyValue.T_FileJSON);
-                W_FileJSON.Append("|");
-                MyValue.Count++;
+                if (MyValue.T_FindFace == true)
+                {
+                    int t_count = 0;
+                    foreach (Face T_FaceValue in MyValue.TA_FaceValue)
+                    {
+                        if (t_count==0)
+                        {
+                            Console.WriteLine("You have upload {0} successful.", T_FaceValue.Directory_F);
+                        }
+                        Person.Add(T_FaceValue);
+                        t_count++;
+                    }
+                    W_FileJSON.Append("|");
+                    W_FileJSON.Append(MyValue.TB_FileJSON);
+                    MyValue.Count++;
+                }
+                else
+                {
+                    Console.WriteLine("We can't find face in file {0}, please recheck this picture. ", MPD.ToString());
+                }
             }
             MyValue.T_Sample = "true";
             foreach (string MSD in MySampleDicere)
@@ -186,11 +208,21 @@ namespace FaceMagic_Console
                     System.Threading.Thread.Sleep(200);
                 }
                 MyValue.Finish = "";
-                Console.WriteLine("You have upload {0} successful.", MyValue.T_FaceValue.Directory_F);            
-                Person.Add(MyValue.T_FaceValue);
-                W_FileJSON.Append(MyValue.T_FileJSON);
-                W_FileJSON.Append("|");
-                MyValue.Count++;
+                if (MyValue.T_FindFace==true)
+                {
+                    foreach (Face T_FaceValue in MyValue.TA_FaceValue)
+                    {
+                        Console.WriteLine("You have upload {0} successful.", T_FaceValue.Directory_F);
+                        Person.Add(T_FaceValue);                    
+                    }
+                    W_FileJSON.Append("|");
+                    W_FileJSON.Append(MyValue.TB_FileJSON);
+                    MyValue.Count++;
+                }
+                else
+                {
+                    Console.WriteLine("We can't find face in file {0}, please recheck this picture. ",MSD.ToString());
+                }
             }
             Console.WriteLine("***********----------------SUCCESS----------------***********");
             foreach (Face people in Person)
@@ -210,6 +242,7 @@ namespace FaceMagic_Console
 
         static async void API_Detect(string T_Directory)
         {
+            MyValue.TB_FileJSON = new StringBuilder();
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
             // Request headers
@@ -226,29 +259,57 @@ namespace FaceMagic_Console
                 response = await client.PostAsync(uri, content);
                 
             }
-            //Console.WriteLine(response.StatusCode.ToString());//outut test   
-            string J_Result = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine(await response.Content.ReadAsStringAsync());//outut test
-            //Delete []
-            J_Result = J_Result.Substring(0, J_Result.Length - 1);
-            J_Result = J_Result.Substring(1);
-            JObject Result_A = JObject.Parse(J_Result);
-            int found1 = 0;
-            int found2 = 0;
-            found1 = T_Directory.IndexOf("\\");
-            found2 = T_Directory.IndexOf(".");
-            Result_A.Add("Name", T_Directory.Substring(found1 + 1, found2 - found1 - 1));
-            Result_A.Add("Path", T_Directory);
-            Result_A.Add("Sample", MyValue.T_Sample);
-            MyValue.T_FileJSON = Result_A.ToString();
-            //Console.WriteLine(Result_A["faceAttributes"]["gender"].ToString());//outut test                      
-            MyValue.T_FaceValue = new Face(Result_A["faceId"].ToString(),
-                Result_A["faceAttributes"]["gender"].ToString(),
-                Result_A["faceAttributes"]["age"].ToString(),
-                Result_A["Name"].ToString(),
-                Result_A["Path"].ToString(),
-                Result_A["Sample"].ToString());
-            MyValue.Finish = response.StatusCode.ToString();   
+            //Console.WriteLine(response.StatusCode.ToString());//outut test
+            //Console.WriteLine(response.ToString());
+            string J_Result = await response.Content.ReadAsStringAsync();            
+            if (J_Result == "[]")
+            {
+                MyValue.T_FindFace = false;
+            }
+            else
+            {
+                J_Result = J_Result.Substring(0, J_Result.Length - 1);
+                J_Result = J_Result.Substring(1);
+                J_Result = J_Result.Replace("},{", "}|{");
+                string[] JA_Resule = J_Result.Split('|');
+                MyValue.TA_FaceValue = new Face[JA_Resule.Length];
+                int tCount = 0;
+                foreach (string JR in JA_Resule)
+                {
+                    JObject Result_A = JObject.Parse(JR);
+                    int found1 = 0;
+                    int found2 = 0;
+                    found1 = T_Directory.IndexOf("\\");
+                    found2 = T_Directory.IndexOf(".");
+                    string name_P;
+                    if (JA_Resule.Length == 1)
+                    {
+                        name_P = "";
+                    }
+                    else
+                    {
+                        name_P = " Face-" + tCount;
+                    }
+                    Result_A.Add("Name", T_Directory.Substring(found1 + 1, found2 - found1 - 1)+name_P);
+                    Result_A.Add("Path", T_Directory);
+                    Result_A.Add("Sample", MyValue.T_Sample);
+                    MyValue.TB_FileJSON.Append(Result_A.ToString());
+                    if (JA_Resule.Length - tCount > 1) MyValue.TB_FileJSON.Append("|");                    
+                    MyValue.T_FaceValue = new Face(Result_A["faceId"].ToString(),
+                        Result_A["faceAttributes"]["gender"].ToString(),
+                        Result_A["faceAttributes"]["age"].ToString(),
+                        Result_A["Name"].ToString(),
+                        Result_A["Path"].ToString(),
+                        Result_A["Sample"].ToString());
+                    MyValue.TA_FaceValue[tCount] = MyValue.T_FaceValue;
+                    tCount++;
+                }
+                MyValue.T_FindFace = true;
+                //Console.WriteLine(await response.Content.ReadAsStringAsync());//outut test
+                //Delete []
+                
+            }            
+            MyValue.Finish = response.StatusCode.ToString();
         }
 
         static async void API_FindSimilar(string T_FaceId , JArray FaceIds,string mode)
@@ -291,7 +352,9 @@ namespace FaceMagic_Console
         public static Face T_FaceValue { get; set; }
         public static string T_Directory { get; set; }
         public static string T_FileJSON { get; set; }
-        
+        public static bool T_FindFace { get; set; }
+        public static Face[] TA_FaceValue { get; set; }
+        public static StringBuilder TB_FileJSON { get; set; }
     }
     public class Face
     {
@@ -303,6 +366,7 @@ namespace FaceMagic_Console
         public string Sample_F { get; set; }
         public double Confidence_F { get; set; }
         public string Same_F { get; set; }
+        //public string FindFace { get; set; }
 
         public Face(string id_f, string gender_f, string age_f, string name_f ,string directory_f, string sample_f)
         {
