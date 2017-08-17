@@ -14,9 +14,11 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             Console.WriteLine("Please input the threshold, If you can't understand, please input 0.7.");
-            Console.WriteLine("(  0<Threshold<1  )");
+            Console.WriteLine("(  0 < Threshold < 1  )");
             MyValue.Threshold = double.Parse( Console.ReadLine());
+            sw.Start();
             string[] R_Picture = Directory.GetFiles("Error");
             foreach (string file in R_Picture)
             {
@@ -58,11 +60,16 @@ namespace FaceMagic_Console
                 Person= Get_FaceBasicInformation();  
             }          
             Person = Get_Confidence(Person);
+            sw.Stop();
+            TimeSpan ts2 = sw.Elapsed;
+            Console.WriteLine("\nTook {0} minutes to complete the search.", ts2.TotalMinutes);
             EndConsoleOutput();
         }
 
         static void EndConsoleOutput()
         {
+            Console.WriteLine("\nFaceMagic v"+ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            Console.WriteLine("Build Date: Wed 08/16/2017");
             Console.WriteLine("\n################--------Designed by ZengYF--------################");
             Console.WriteLine("\n---------Power by Microsoft---------");
             Console.WriteLine("\nLearn more about this App in \"https://github.com/XHMY/FaceMagic\"");
@@ -97,7 +104,13 @@ namespace FaceMagic_Console
         }
         static List<Face> Get_Confidence(List<Face> Person)
         {
-            JArray j_FaceIds = new JArray();
+            JArray[] j_FaceIds = new JArray[Person.Count / 1000 + 1];
+            for (int i = 0; i < Person.Count / 1000 + 1; i++)
+            {
+                j_FaceIds[i] = new JArray();
+            }            
+            int t_count = 0;
+            int t_Serial = 0;
             var sam_Faces = from sam_Person in Person
                            where sam_Person.Sample_F == "true"
                            select new { sam_Person.ID_F };      
@@ -105,30 +118,39 @@ namespace FaceMagic_Console
             {
                 if (people.Sample_F=="false")
                 {
-                    j_FaceIds.Add(people.ID_F);
+                    t_count++;
+                    j_FaceIds[t_Serial].Add(people.ID_F);
+                    if (t_count==998)
+                    {
+                        t_Serial++;
+                        t_count = 0;
+                    }
                 }                
             }
             MyValue.Finish = "";
             foreach (var sam_faceid in sam_Faces)
-            {                
-                API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), j_FaceIds, "matchFace");
-                while (MyValue.Finish != "OK")
-                {
-                    System.Threading.Thread.Sleep(200);
-                }
-            }
-            string MyJSON_T = MyValue.T_FileJSON.Replace("},{", "}|{");
-            string[] MyJSON = MyJSON_T.Split('|');
-                        
-            foreach (string MJ in MyJSON)
             {
-                JObject json = new JObject();
-                json = JObject.Parse(MJ);
-                var c_result = Person.Where(p => p.ID_F == json["faceId"].ToString());
-                foreach (Face SCR in c_result)
+                foreach (JArray JFid in j_FaceIds)
                 {
-                    SCR.Confidence_F = double.Parse(json["confidence"].ToString());
-                }
+                    API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), JFid, "matchFace");
+                    while (MyValue.Finish != "OK")
+                    {
+                        System.Threading.Thread.Sleep(200);
+                    }
+                    MyValue.Finish = "";
+                    string MyJSON_T = MyValue.T_FileJSON.Replace("},{", "}|{");
+                    string[] MyJSON = MyJSON_T.Split('|');
+                    foreach (string MJ in MyJSON)
+                    {
+                        JObject json = new JObject();
+                        json = JObject.Parse(MJ);
+                        var c_result = Person.Where(p => p.ID_F == json["faceId"].ToString());
+                        foreach (Face SCR in c_result)
+                        {
+                            SCR.Confidence_F = double.Parse(json["confidence"].ToString());
+                        }
+                    }
+                }                
             }
             var _orderedPerson = Person.OrderByDescending(p => p.Confidence_F);
             Console.WriteLine("\nNow, we can show you the similarity of the sample face with each of the group face.");
@@ -166,8 +188,7 @@ namespace FaceMagic_Console
             return Person;
         }
         static List<Face> Get_FaceBasicInformation()
-        {
-          
+        {            
             List<Face> Person = new List<Face>();  //Creat a new list called Person
             StringBuilder W_FileJSON = new StringBuilder(); //W_FileJSON is the String be written into the TXT file.
             W_FileJSON.Clear();
@@ -177,14 +198,22 @@ namespace FaceMagic_Console
             MyValue.Count = 0;
             MyValue.T_Sample = "false";
             foreach (string MPD in MyPhotoDicrectory)
-            {   
+            {
+                MyValue.T_Timeout = false;
+                int time = 0;
                 API_Detect(MPD);
                 while (MyValue.Finish != "OK")
                 {
+                    time++;
                     System.Threading.Thread.Sleep(200);
+                    if (time==150)
+                    {
+                        MyValue.T_Timeout = true;
+                        break;
+                    }
                 }
                 MyValue.Finish = "";
-                if (MyValue.T_FindFace == true)
+                if (MyValue.T_FindFace == true & MyValue.T_Timeout==false)
                 {
                     int t_count = 0;
                     foreach (Face T_FaceValue in MyValue.TA_FaceValue)
@@ -202,24 +231,47 @@ namespace FaceMagic_Console
                 }
                 else
                 {
-                    Console.WriteLine("We can't find face in file {0}, please recheck this picture. ", MPD.ToString());
+                    if (MyValue.T_Timeout==true)
+                    {
+                        Console.WriteLine("Time out!!! Fail to upload {0}",MPD);
+                        File.Copy(Path.GetFullPath(MPD), "Error\\"
+                        + "TimeOut  "
+                        + MPD.Substring(11), true);
+                    }
+                    else
+                    {
+                        Console.WriteLine("We can't find face in file {0}, please recheck this picture. ", MPD.ToString());
+                    }                   
                 }
             }
             MyValue.T_Sample = "true";
             foreach (string MSD in MySampleDicere)
             {
+                MyValue.T_Timeout = false;
+                int time = 0;
                 API_Detect(MSD);
                 while (MyValue.Finish != "OK")
                 {
+                    time++;
                     System.Threading.Thread.Sleep(200);
+                    if (time == 150)
+                    {
+                        MyValue.T_Timeout = true;
+                        break;
+                    }
                 }
                 MyValue.Finish = "";
-                if (MyValue.T_FindFace==true)
+                if (MyValue.T_FindFace == true & MyValue.T_Timeout == false)
                 {
+                    int t_count = 0;
                     foreach (Face T_FaceValue in MyValue.TA_FaceValue)
                     {
-                        Console.WriteLine("You have upload {0} successful.", T_FaceValue.Directory_F);
-                        Person.Add(T_FaceValue);                    
+                        if (t_count == 0)
+                        {
+                            Console.WriteLine("You have upload {0} successful.", T_FaceValue.Directory_F);
+                        }
+                        Person.Add(T_FaceValue);
+                        t_count++;
                     }
                     W_FileJSON.Append("|");
                     W_FileJSON.Append(MyValue.TB_FileJSON);
@@ -227,7 +279,17 @@ namespace FaceMagic_Console
                 }
                 else
                 {
-                    Console.WriteLine("We can't find face in file {0}, please recheck this picture. ",MSD.ToString());
+                    if (MyValue.T_Timeout == true)
+                    {
+                        Console.WriteLine("Time out!!! Fail to upload {0}", MSD);
+                        File.Copy(Path.GetFullPath(MSD), "Error\\"
+                        + "TimeOut  "
+                        + MSD.Substring(11), true);
+                    }
+                    else
+                    {
+                        Console.WriteLine("We can't find face in file {0}, please recheck this picture. ", MSD.ToString());
+                    }
                 }
             }
             Console.WriteLine("***********----------------SUCCESS----------------***********");
@@ -245,6 +307,7 @@ namespace FaceMagic_Console
             Console.WriteLine("Warning:The FaceID will expire after 24 hour!!!");
             return Person;
         }
+
 
         static async void API_Detect(string T_Directory)
         {
@@ -364,6 +427,7 @@ namespace FaceMagic_Console
         public static Face[] TA_FaceValue { get; set; }
         public static StringBuilder TB_FileJSON { get; set; }
         public static double Threshold { get; set; }
+        public static bool T_Timeout { get; set; }
     }
     public class Face
     {
@@ -375,7 +439,6 @@ namespace FaceMagic_Console
         public string Sample_F { get; set; }
         public double Confidence_F { get; set; }
         public string Same_F { get; set; }
-        //public string FindFace { get; set; }
 
         public Face(string id_f, string gender_f, string age_f, string name_f ,string directory_f, string sample_f)
         {

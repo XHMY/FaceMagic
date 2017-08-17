@@ -6,7 +6,6 @@ D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\FaceMagic_
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.dll
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.pdb
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Newtonsoft.Json.xml
-D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.csprojResolveAssemblyReference.cache
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.exe
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\obj\Release\FaceMagic_Console.pdb
 D:\Projects\FaceMagic\FaceMagic_Console\FaceMagic_Console\bin\Release\Result\There are the photo we found
