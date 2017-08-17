@@ -62,14 +62,14 @@ namespace FaceMagic_Console
             Person = Get_Confidence(Person);
             sw.Stop();
             TimeSpan ts2 = sw.Elapsed;
-            Console.WriteLine("\nTook {0} minutes to complete the search.", ts2.TotalMinutes);
+            Console.WriteLine("\nIt took {0} min to search in {1} photos.", ts2.TotalMinutes,Person.Count);
             EndConsoleOutput();
         }
 
         static void EndConsoleOutput()
         {
             Console.WriteLine("\nFaceMagic v"+ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            Console.WriteLine("Build Date: Wed 08/16/2017");
+            Console.WriteLine("Build Date: Thu 08/17/2017");
             Console.WriteLine("\n################--------Designed by ZengYF--------################");
             Console.WriteLine("\n---------Power by Microsoft---------");
             Console.WriteLine("\nLearn more about this App in \"https://github.com/XHMY/FaceMagic\"");
@@ -183,7 +183,7 @@ namespace FaceMagic_Console
                         + sp.Directory_F.Substring(sp.Directory_F.Length-4),true);
                 }
             }
-            Console.WriteLine("\nWe have found {0} picture have the same with sample picture." +
+            Console.WriteLine("\nWe have found {0} pictures have the similar face with sample picture." +
                 "\nYou can see it in the float \"Result\"",MyValue.Count);
             return Person;
         }
