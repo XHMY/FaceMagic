@@ -1,1 +1,18 @@
-﻿
+|{
+  "faceId": "a3304931-20cc-4651-a236-f121cf21700f",
+  "faceRectangle": {
+    "top": 205,
+    "left": 415,
+    "width": 425,
+    "height": 425
+  },
+  "faceAttributes": {
+    "smile": 0.016,
+    "gender": "male",
+    "age": 56.2,
+    "glasses": "ReadingGlasses"
+  },
+  "Name": "Bier",
+  "Path": "Sample\\Bier.jpg",
+  "Sample": "true"
+}

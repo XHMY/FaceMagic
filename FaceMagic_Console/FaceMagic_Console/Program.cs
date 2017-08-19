@@ -14,10 +14,25 @@ namespace FaceMagic_Console
     {
         static void Main(string[] args)
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            Console.WriteLine("Please input the threshold, If you can't understand, please input 0.7.");
-            Console.WriteLine("(  0 < Threshold < 1  )");
-            MyValue.Threshold = double.Parse( Console.ReadLine());
+            Console.WriteLine("Please chose which work mode would you want." +
+                "\n\"matchPerson\": It is useful to find a known person's other photos." +
+                "\n\"matchFace\": It can be used in the cases like searching celebrity-looking faces." +
+                "\nChoes matchPerson Mode input \"1\"    Choes matchFace Mode input \"2\"" +
+                "\nIf you can't understand, please input \"1\".");
+            MyValue.Mode = Console.ReadLine();
+            if (MyValue.Mode=="2")
+            {
+                Console.WriteLine("Please input the threshold, If you can't understand, please input 0.6.");
+                Console.WriteLine("(  0 < Threshold < 1  )");
+                MyValue.Threshold = double.Parse(Console.ReadLine());
+                MyValue.Mode = "matchFace";
+            }
+            else
+            {
+                MyValue.Mode = "matchPerson";
+                MyValue.Threshold = 0.001;
+            }
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();        
             sw.Start();
             string[] R_Picture = Directory.GetFiles("Error");
             foreach (string file in R_Picture)
@@ -132,7 +147,7 @@ namespace FaceMagic_Console
             {
                 foreach (JArray JFid in j_FaceIds)
                 {
-                    API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), JFid, "matchFace");
+                    API_FindSimilar(sam_faceid.ToString().Substring(9,sam_faceid.ToString().Length-11), JFid, MyValue.Mode);
                     while (MyValue.Finish != "OK")
                     {
                         System.Threading.Thread.Sleep(200);
@@ -152,8 +167,26 @@ namespace FaceMagic_Console
                     }
                 }                
             }
-            var _orderedPerson = Person.OrderByDescending(p => p.Confidence_F);
-            Console.WriteLine("\nNow, we can show you the similarity of the sample face with each of the group face.");
+            var _orderedPerson = Person.OrderByDescending(p => p.Confidence_F);        
+            MyValue.Count = 0;
+            var SamePeople = Person.Where(p => p.Confidence_F > MyValue.Threshold);
+            string[] R_Picture = Directory.GetFiles("Result");
+            foreach (string file in R_Picture)
+            {
+                File.Delete(file);
+            }
+            foreach (Face sp in SamePeople)
+            {
+                if (sp.Sample_F == "false")
+                {
+                    MyValue.Count++;
+                    File.Copy(Path.GetFullPath(sp.Directory_F), "Result\\"
+                        + sp.Confidence_F
+                        + "  " + sp.Name_F
+                        + sp.Directory_F.Substring(sp.Directory_F.Length - 4), true);
+                }
+            }
+            Console.WriteLine("\nNow, we can show you the confidence of the sample face with each face in the group.");
             foreach (Face people in _orderedPerson)
             {
                 if (people.Sample_F=="false")
@@ -165,26 +198,8 @@ namespace FaceMagic_Console
                     Console.WriteLine("\nSampleFaceName: {0}  Gender: {1}  Age: {2}", people.Name_F, people.Gender_F, people.Age_F);
                 }
             }
-            MyValue.Count = 0;
-            var SamePeople = Person.Where(p=>p.Confidence_F >MyValue.Threshold);
-            string[] R_Picture = Directory.GetFiles("Result");
-            foreach (string file in R_Picture)
-            {
-                File.Delete(file);
-            }
-            foreach (Face sp in SamePeople)
-            {
-                if (sp.Sample_F=="false")
-                {
-                    MyValue.Count++;
-                    File.Copy(Path.GetFullPath(sp.Directory_F), "Result\\" 
-                        + sp.Confidence_F
-                        +"  "+ sp.Name_F
-                        + sp.Directory_F.Substring(sp.Directory_F.Length-4),true);
-                }
-            }
             Console.WriteLine("\nWe have found {0} pictures have the similar face with sample picture." +
-                "\nYou can see it in the float \"Result\"",MyValue.Count);
+                "\nYou can see it in the float \"Result\"", MyValue.Count);
             return Person;
         }
         static List<Face> Get_FaceBasicInformation()
@@ -416,6 +431,7 @@ namespace FaceMagic_Console
     }
     public class MyValue
     {
+        public static string Mode { get; set; }
         public static string API_Key { get; set; }
         public static string T_Sample { get; set; }
         public static string Finish { get; set; }
